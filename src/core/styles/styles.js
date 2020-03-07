@@ -12,6 +12,7 @@ const coreStyles = {
   },
   container: {
     flex: 1,
+    padding: 10,
   },
   input: {
     borderWidth: 1,
