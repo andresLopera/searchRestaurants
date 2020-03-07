@@ -10,6 +10,32 @@ const coreStyles = {
     accentColor2: ACCENT_COLOR2,
     accentColor3: ACCENT_COLOR3,
   },
+  container: {
+    flex: 1,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: 'grey',
+    padding: 10,
+    marginVertical: 10,
+    borderRadius: 5,
+    fontSize: 18,
+  },
+  buttonWrapper: {
+    height: 100,
+    marginHorizontal: 10,
+  },
+  button: {
+    height: 40,
+    backgroundColor: 'teal',
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
 };
 
 export default coreStyles;
