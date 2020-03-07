@@ -25,7 +25,7 @@ const mainHeaderStyle = {
     alignItems: 'center',
   },
   buttonText: {
-    fontWeight: 'regular',
+    fontWeight: 'normal',
   },
 };
 
