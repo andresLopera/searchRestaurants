@@ -1,15 +1,25 @@
-import {createStackNavigator} from '@react-navigation/native';
-import OnBoard from '../core/screens/onBoard/onBoard';
+import React from 'react';
+import {createStackNavigator} from '@react-navigation/stack';
+import Register from './screens/register/register';
+import Login from './screens/login/login';
 
-const AuthStack = createStackNavigator({
-  OnBoard: {
-    screen: OnBoard,
-    navigationOptions: {
-      gesturesEnabled: false,
-      header: null,
-    },
-  },
-  initialRouteName: 'Onboard',
-});
+const AuthStack = createStackNavigator();
 
-export default AuthStack;
+const AuthStackNavigation = () => {
+  return (
+    <AuthStack.Navigator>
+      <AuthStack.Screen
+        name="Register"
+        component={Register}
+        options={{headerShown: false}}
+      />
+      <AuthStack.Screen
+        name="Login"
+        component={Login}
+        options={{headerShown: false}}
+      />
+    </AuthStack.Navigator>
+  );
+};
+
+export default AuthStackNavigation;

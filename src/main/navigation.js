@@ -1,15 +1,15 @@
-import {createStackNavigator} from '@react-navigation/native';
-import OnBoard from '../core/screens/onBoard/onBoard';
+import React from 'react';
+import {createStackNavigator} from '@react-navigation/stack';
+import Main from './screens/main';
 
-const MainStack = createStackNavigator({
-  OnBoard: {
-    screen: OnBoard,
-    navigationOptions: {
-      gesturesEnabled: false,
-      header: null,
-    },
-  },
-  initialRouteName: 'Onboard',
-});
+const MainStack = createStackNavigator();
 
-export default MainStack;
+const MainStackNavigation = () => {
+  return (
+    <MainStack.Navigator>
+      <MainStack.Screen name="Home" component={Main} />
+    </MainStack.Navigator>
+  );
+};
+
+export default MainStackNavigation;
