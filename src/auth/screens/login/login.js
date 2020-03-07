@@ -49,7 +49,7 @@ const Login = ({navigation}) => {
       </View>
 
       <TouchableOpacity style={coreStyles.buttonWrapper} onPress={handleSubmit}>
-        <View style={coreStyles.button}>
+        <View style={[coreStyles.button, coreStyles.buttonPrimary]}>
           <Text style={coreStyles.buttonText}>LogIn</Text>
         </View>
       </TouchableOpacity>
@@ -57,8 +57,10 @@ const Login = ({navigation}) => {
       <TouchableOpacity
         style={coreStyles.buttonWrapper}
         onPress={handleRegister}>
-        <View style={coreStyles.button}>
-          <Text style={coreStyles.buttonText}>Register</Text>
+        <View style={[coreStyles.button, coreStyles.buttonSecond]}>
+          <Text style={[coreStyles.buttonText, coreStyles.buttonTextSecond]}>
+            Register
+          </Text>
         </View>
       </TouchableOpacity>
     </View>

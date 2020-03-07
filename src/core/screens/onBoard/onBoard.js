@@ -6,7 +6,7 @@ const OnBoard = ({navigation}) => {
   const authService = AuthService.instance;
   useState(() => {
     if (authService.isLogin()) {
-      navigation.navigate('Home');
+      navigation.navigate('Main');
     } else {
       navigation.navigate('Auth', {screen: 'Login'});
     }

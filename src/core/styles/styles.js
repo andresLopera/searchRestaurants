@@ -27,14 +27,23 @@ const coreStyles = {
   },
   button: {
     height: 40,
-    backgroundColor: 'teal',
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
   },
+  buttonPrimary: {
+    backgroundColor: ACCENT_COLOR,
+    color: 'white',
+  },
+  buttonSecond: {
+    backgroundColor: 'white',
+  },
   buttonText: {
     color: 'white',
     fontWeight: 'bold',
+  },
+  buttonTextSecond: {
+    color: ACCENT_COLOR,
   },
 };
 

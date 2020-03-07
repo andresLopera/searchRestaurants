@@ -63,7 +63,7 @@ const Register = ({navigation}) => {
       </View>
 
       <TouchableOpacity style={coreStyles.buttonWrapper} onPress={handleSubmit}>
-        <View style={coreStyles.button}>
+        <View style={[coreStyles.button, coreStyles.buttonPrimary]}>
           <Text style={coreStyles.buttonText}>Register</Text>
         </View>
       </TouchableOpacity>
@@ -71,8 +71,10 @@ const Register = ({navigation}) => {
       <TouchableOpacity
         style={coreStyles.buttonWrapper}
         onPress={handleGoToLogin}>
-        <View style={coreStyles.button}>
-          <Text style={coreStyles.buttonText}>Do you have account?</Text>
+        <View style={[coreStyles.button, coreStyles.buttonSecond]}>
+          <Text style={[coreStyles.buttonText, coreStyles.buttonTextSecond]}>
+            Do you have account?
+          </Text>
         </View>
       </TouchableOpacity>
     </View>
