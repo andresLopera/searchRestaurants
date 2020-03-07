@@ -28,7 +28,7 @@ const Register = ({navigation}) => {
   }, [userName, password, confirmPassword, authService, navigation]);
 
   const handleGoToLogin = () => {
-    navigation.navigate('Auth', {screen: 'Register'});
+    navigation.goBack();
   };
 
   return (
