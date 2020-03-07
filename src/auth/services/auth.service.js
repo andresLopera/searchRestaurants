@@ -42,6 +42,10 @@ const AuthService = {
           }
           return false;
         },
+        logOut() {
+          this.currentUser = null;
+          return true;
+        },
         isLogin() {
           return !!this.currentUser;
         },
