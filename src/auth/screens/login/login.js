@@ -1,7 +1,8 @@
 import React, {useState, useCallback} from 'react';
-import {Alert, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {Alert, View} from 'react-native';
 import coreStyles from '../../../core/styles/styles';
 import AuthService from '../../services/auth.service';
+import {Button, TextInput, Title, Paragraph} from 'react-native-paper';
 
 const Login = ({navigation}) => {
   const authService = AuthService.instance;
@@ -28,43 +29,75 @@ const Login = ({navigation}) => {
   };
 
   return (
-    <View style={coreStyles.container}>
-      <View>
-        <Text>Username</Text>
+    <View style={[coreStyles.container, loginStyles.container]}>
+      <View style={loginStyles.card}>
+        <Title style={loginStyles.title}>Login</Title>
         <TextInput
-          style={coreStyles.input}
+          style={loginStyles.textInput}
+          label="Username"
+          mode="flat"
           value={userName}
           onChangeText={setUserName}
         />
-      </View>
 
-      <View>
-        <Text>Password</Text>
         <TextInput
-          style={coreStyles.input}
+          style={loginStyles.textInput}
+          label="Password"
+          mode="flat"
           secureTextEntry={true}
           value={password}
           onChangeText={setPassword}
         />
+        <View style={loginStyles.actions}>
+          <Button
+            style={loginStyles.btnLogin}
+            mode="contained"
+            onPress={handleSubmit}>
+            LogIn
+          </Button>
+        </View>
+        <View style={loginStyles.noAccountContainer}>
+          <Paragraph>No account?</Paragraph>
+          <Button
+            style={loginStyles.btnLogin}
+            mode="text"
+            onPress={handleRegister}>
+            Sign up
+          </Button>
+        </View>
       </View>
-
-      <TouchableOpacity style={coreStyles.buttonWrapper} onPress={handleSubmit}>
-        <View style={[coreStyles.button, coreStyles.buttonPrimary]}>
-          <Text style={coreStyles.buttonText}>LogIn</Text>
-        </View>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={coreStyles.buttonWrapper}
-        onPress={handleRegister}>
-        <View style={[coreStyles.button, coreStyles.buttonSecond]}>
-          <Text style={[coreStyles.buttonText, coreStyles.buttonTextSecond]}>
-            Register
-          </Text>
-        </View>
-      </TouchableOpacity>
     </View>
   );
+};
+
+const loginStyles = {
+  container: {
+    justifyContent: 'center',
+  },
+  title: {
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+  card: {
+    padding: 5,
+  },
+  textInput: {
+    backgroundColor: 'transparent',
+  },
+  btnLogin: {
+    maxWidth: '50%',
+  },
+  actions: {
+    marginVertical: 30,
+    display: 'flex',
+    alignItems: 'flex-end',
+  },
+  noAccountContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 50,
+  },
 };
 
 export default Login;
