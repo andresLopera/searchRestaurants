@@ -5,6 +5,7 @@ import {
   Provider as PaperProvider,
 } from 'react-native-paper';
 import AppNavigator from './appNavigator';
+import {SafeAreaView} from 'react-native';
 
 const fontConfig = {
   default: {
@@ -39,8 +40,17 @@ const theme = {
 
 export default function App() {
   return (
-    <PaperProvider theme={theme}>
-      <AppNavigator />
-    </PaperProvider>
+    <SafeAreaView style={appStyle.SafeAreaView}>
+      <PaperProvider theme={theme}>
+        <AppNavigator />
+      </PaperProvider>
+    </SafeAreaView>
   );
+}
+
+
+const appStyle = {
+  SafeAreaView: {
+    flex: 1,
+  }
 }

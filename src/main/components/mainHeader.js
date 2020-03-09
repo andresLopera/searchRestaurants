@@ -1,7 +1,7 @@
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {Appbar, IconButton, Title} from 'react-native-paper';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-import coreStyles from '../../core/styles/styles';
 import AuthService from '../../auth/services/auth.service';
 
 const mainHeaderStyle = {
@@ -9,13 +9,10 @@ const mainHeaderStyle = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: coreStyles.colors.accentColor,
     paddingHorizontal: 10,
     paddingVertical: 5,
   },
   title: {
-    fontWeight: 'bold',
-    fontSize: 18,
     color: 'white',
   },
   button: {
@@ -39,16 +36,15 @@ const MainHeader = ({navigation}) => {
   };
 
   return (
-    <View style={mainHeaderStyle.headerContainer}>
-      <Text style={mainHeaderStyle.title}>Restaurants</Text>
-      <TouchableOpacity onPress={handleLogout}>
-        <View style={mainHeaderStyle.button}>
-          <Text style={[coreStyles.buttonText, mainHeaderStyle.buttonText]}>
-            LogIn
-          </Text>
-        </View>
-      </TouchableOpacity>
-    </View>
+    <Appbar style={mainHeaderStyle.headerContainer}>
+      <Title style={mainHeaderStyle.title}>Restaurants</Title>
+      <IconButton
+        icon="exit-to-app"
+        color={Colors.white}
+        size={20}
+        onPress={handleLogout}
+      />
+    </Appbar>
   );
 };
 
